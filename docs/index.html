@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Smart Pharma – Brochure</title>
+<meta name="description" content="IoT system that monitors medical fridges: ESP32, Firebase, admin web app and Android client app.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Smart Pharma">
+<meta property="og:description" content="Cold-chain monitoring for corona cures: ESP32, Firebase, admin web dashboard and Android client app.">
+<meta property="og:url" content="https://YOUR-USERNAME.github.io/YOUR-REPO/">
+<meta property="og:image" content="https://YOUR-USERNAME.github.io/YOUR-REPO/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef5f8;--ink:#0b2233;--mute:#4f6a79;--card:#fff;--line:#cfdde5;--teal:#0a8fb5;--ice:#6fe0ff;--navy:#0b3550;--ok:#12b886;--bad:#e03131;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1a26;--ink:#e6f1f6;--mute:#93aebc;--card:#10283a;--line:#1d3a50}}
+:root[data-theme="dark"]{--bg:#0a1a26;--ink:#e6f1f6;--mute:#93aebc;--card:#10283a;--line:#1d3a50}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:500 17px/1.6 Manrope,system-ui,sans-serif}
+h1,h2,h3{margin:0;line-height:1.1;letter-spacing:-.02em;font-weight:800}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-weight:700}nav b{font-size:20px}nav b i{color:var(--teal);font-style:normal}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.hs{display:grid;background:#07131f;border-radius:10px;overflow:hidden;margin-bottom:24px}
+.hsl{grid-area:1/1;opacity:0;transition:opacity .8s;pointer-events:none}.hsl.on{opacity:1;pointer-events:auto}
+.im{overflow:hidden}.hsl img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}.hsl.fit img{object-fit:contain;background:#07131f}
+.cap{margin:0;color:#fff;padding:12px 16px 0;text-align:center;font-size:16px}
+.cc{display:flex;align-items:center;justify-content:center;gap:12px;padding:12px}.hs .cc{grid-area:2/1}
+.cc button{width:40px;height:40px;border:2px solid var(--ink);background:var(--card);color:var(--ink);font:700 22px/1 Manrope,sans-serif;cursor:pointer;border-radius:8px}.hs .cc button{background:#0008;border-color:#fff;color:#fff}
+button:focus-visible,.track:focus-visible{outline:3px solid #f2c200;outline-offset:2px}
+.dots{display:flex;gap:8px}.dots i{width:10px;height:10px;border-radius:50%;background:#8aa0ad;opacity:.6}.dots i.on{background:var(--ice);opacity:1;outline:1px solid #0b3550}
+.lead{font-size:20px;color:var(--mute);max-width:60ch;margin:0 0 28px}
+section{padding:60px 0;border-top:1px solid var(--line)}section h2{font-size:clamp(32px,4.5vw,52px);margin-bottom:12px}
+.sub{color:var(--mute);max-width:58ch;margin:0 0 30px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.c{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}.c h3{font-size:24px;margin-bottom:6px}.c p{margin:0;color:var(--mute)}.c .n{font-size:38px;font-weight:800;color:var(--teal)}
+.tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.tag{background:var(--navy);color:#fff;padding:6px 14px;border-radius:99px;font-size:15px;font-weight:700}
+.demo{display:grid;grid-template-columns:1.5fr 1fr;gap:20px;background:#0a2335;border-radius:16px;padding:20px;color:#e6f1f6}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.tile{background:#12304a;border-radius:12px;padding:12px}.tile small{color:#93aebc;font-size:13px;display:block}.tile b{font-size:24px}
+.tile.bad b{color:#ff8787}canvas{width:100%;height:230px;display:block;background:#0e2a40;border-radius:12px;margin-top:10px}
+.al{background:#12304a;border-radius:12px;padding:14px;min-height:150px}.al h3{font-size:20px;margin-bottom:8px}.al div{display:flex;justify-content:space-between;border-top:1px solid #27506f;padding:6px 0;font-size:15px}.al div b{color:#ff8787}
+.ctl{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}.ctl button{background:#12304a;color:#e6f1f6;border:1px solid #27506f;border-radius:8px;padding:8px 14px;font:700 14px Manrope,sans-serif;cursor:pointer}.ctl button[aria-pressed=true]{background:var(--ice);color:#06222b}
+.hint{font-size:13px;color:#93aebc;margin:10px 0 0}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0}.step{background:var(--navy);color:#fff;padding:20px;margin-right:6px;border-radius:12px}.step b{display:block;font-size:20px;font-weight:800;margin-bottom:4px}.step span{color:#b9d3e0;font-size:15px}
+.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}.track::-webkit-scrollbar{display:none}
+.sl{flex:0 0 100%;scroll-snap-align:center;margin:0;display:grid;grid-template-columns:1.6fr 1fr;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-height:340px}
+.sl img{width:100%;height:100%;max-height:470px;object-fit:contain;background:#fff;display:block}
+.sl figcaption,.sl.tx>div{padding:24px;align-self:center}.sl.tx{grid-template-columns:1fr}
+.sl h3{font-size:28px;margin-bottom:8px}.sl p{margin:0;color:var(--mute)}.sl ul{margin:10px 0 0;padding-left:20px;color:var(--mute)}.sl li{margin:4px 0}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.team div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}.team small{display:block;color:var(--mute);font-size:14px;margin-bottom:6px}.team strong{font-size:24px;font-weight:800}
+footer{background:var(--navy);color:#e6f1f6;padding:32px 0}footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}footer p{margin:2px 0;color:#b9d3e0}
+@media (max-width:900px){.g3,.team,.flow{grid-template-columns:1fr}.demo{grid-template-columns:1fr}.sl{grid-template-columns:1fr}.tiles{grid-template-columns:repeat(2,1fr)}.step{margin:0 0 6px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><b>Smart<i>●</i>Pharma</b><span>ISET Sousse · Bachelor project</span></nav>
+<div class="hs" id="hs" aria-roledescription="carousel" aria-label="Project overview"><h1 class="sr">Smart Pharma</h1>
+<div class="hsl on"><div class="im"><img data-wp alt="Smart fridge, ESP32, Firebase cloud, admin web app and client Android app"></div><p class="cap">An IoT system that watches medical fridges from anywhere</p></div>
+<div class="hsl fit"><div class="im"><img src="assets/real-time-data-page-of-the-admin-dashboa.jpg" alt="Real time data page of the admin dashboard"></div><p class="cap">Real-time data in the admin dashboard</p></div>
+<div class="hsl fit"><div class="im"><img src="assets/dashboard-home-in-dark-mode.jpg" alt="Dashboard home in dark mode"></div><p class="cap">Dashboard home, dark theme</p></div>
+<div class="cc"><button class="pv" aria-label="Previous slide">‹</button><span class="dots"></span><button class="nx" aria-label="Next slide">›</button></div></div>
+<p class="lead" style="margin-top:28px">Smart Pharma makes sure corona vaccines and cures stay safe in medical stores. An ESP32 inside each fridge reports to Firebase, and the administrator and the client follow everything live.</p>
+<div class="tags"><span class="tag">ESP32</span><span class="tag">Firebase</span><span class="tag">Admin web app</span><span class="tag">Android client app</span></div>
+
+<section>
+<h2>Why it matters</h2>
+<p class="sub">The pandemic showed how weak the cold chain was. Many cures need steady, very low temperatures, and a power cut or an open door can ruin a whole stock.</p>
+<div class="g3">
+<div class="c"><div class="n">01</div><h3>Smart fridges</h3><p>Central drug store refrigerators become connected: temperature, door, battery and electricity are measured and sent to the cloud.</p></div>
+<div class="c"><div class="n">02</div><h3>Admin dashboard</h3><p>A professional web app to manage clients and fridges, watch real-time data, read the history and receive error notifications.</p></div>
+<div class="c"><div class="n">03</div><h3>Client app</h3><p>An Android app lets each client check their own fridges from their phone.</p></div>
+</div>
+</section>
+
+<section id="live">
+<h2>Try the live monitor</h2>
+<p class="sub">A small simulation of what the dashboard shows. Open the door or cut the power and watch the alerts appear. Values are demo data.</p>
+<div class="demo"><div><div class="tiles"><div class="tile" id="t0"><small>Temperature</small><b>-80 °C</b></div><div class="tile" id="t1"><small>Door state</small><b>closed</b></div><div class="tile" id="t2"><small>Battery</small><b>100 %</b></div><div class="tile" id="t3"><small>Electricity</small><b>on</b></div></div>
+<canvas id="cv" aria-label="Temperature chart"></canvas>
+<div class="ctl"><button id="bd" aria-pressed="false">Open door</button><button id="bp" aria-pressed="false">Cut power</button><button id="bw">Warm up</button><button id="br">Reset</button></div></div>
+<div class="al" id="al"><h3>Top alerts</h3><span style="color:#93aebc">No alerts</span></div></div>
+</section>
+
+<section>
+<h2>How it works</h2>
+<p class="sub">From the sensors to the administrator and the client.</p>
+<div class="flow"><div class="step"><b>ESP32</b><span>Reads temperature, door, battery and power</span></div><div class="step"><b>Wi-Fi</b><span>Uploads the values with the client’s Wi-Fi settings</span></div><div class="step"><b>Firebase</b><span>Realtime Database stores data and error history</span></div><div class="step"><b>Apps</b><span>Admin web app and client Android app read it live</span></div></div>
+</section>
+<section id="dashboard"><h2>The admin web dashboard</h2><p class="sub">One place for the administrator to manage clients and fridges and to watch every value in real time.</p><div class="car" aria-roledescription="carousel" aria-label="The admin web dashboard"><div class="track" tabindex="0"><figure class="sl"><img src="assets/login-page.jpg" alt="Login page"><figcaption><h3>Login</h3><p>Only the administrator can sign in, with an email and a password.</p></figcaption></figure><figure class="sl"><img src="assets/dashboard-home.jpg" alt="Dashboard home"><figcaption><h3>Dashboard home</h3><p>The main page, with simple ergonomics, a light and a dark theme.</p></figcaption></figure><figure class="sl"><img src="assets/real-time-data-page.jpg" alt="Real time data page"><figcaption><h3>Real-time data</h3><p>Temperature, door state, battery and electricity at a glance, with a live chart and the top alerts.</p></figcaption></figure><figure class="sl"><img src="assets/temperature-chart.jpg" alt="Temperature chart"><figcaption><h3>Temperature chart</h3><p>A live curve of the fridge temperature with hourly, daily and weekly views.</p></figcaption></figure><figure class="sl"><img src="assets/temperature-history.jpg" alt="Temperature history"><figcaption><h3>Temperature history</h3><p>Every measurement with its date and time, opened in a popup.</p></figcaption></figure><figure class="sl"><img src="assets/error-history.jpg" alt="Error history"><figcaption><h3>Error history</h3><p>Past errors such as err_hp1 and err_door, with their timestamps.</p></figcaption></figure><figure class="sl"><img src="assets/client-profile.jpg" alt="Client profile"><figcaption><h3>Client profile</h3><p>The client’s details, editable by the administrator, with the client’s zones (fridges) in the sidebar.</p></figcaption></figure><figure class="sl"><img src="assets/add-client-form.jpg" alt="Add client form"><figcaption><h3>Add a client</h3><p>A form for the name, contact details and the client’s Wi-Fi credentials.</p></figcaption></figure></div><div class="cc"><button class="pv" aria-label="Previous slide">‹</button><span class="dots"></span><button class="nx" aria-label="Next slide">›</button></div></div></section>
+<section id="design"><h2>Design and technologies</h2><p class="sub">The project followed the waterfall method, with UML diagrams drawn before any code.</p><div class="car" aria-roledescription="carousel" aria-label="Design and technologies"><div class="track" tabindex="0"><figure class="sl"><img src="assets/global-use-case-diagram.jpg" alt="Global use case diagram"><figcaption><h3>Global use case</h3><p>The administrator authenticates, manages clients and fridges, consults status and history, and receives error notifications.</p></figcaption></figure><figure class="sl"><img src="assets/authentication-sequence-diagram.jpg" alt="Authentication sequence diagram"><figcaption><h3>Authentication sequence</h3><p>Email and password go through the login controller to the real-time database. Success redirects to the dashboard, an error shows a message.</p></figcaption></figure><figure class="sl"><img src="assets/consult-fridge-status-sequence-diagram.jpg" alt="Consult fridge status sequence diagram"><figcaption><h3>Consult fridge status</h3><p>The interface asks the controller for the temperature, door, battery and power status stored in the database.</p></figcaption></figure><figure class="sl"><img src="assets/class-diagram.jpg" alt="Class diagram"><figcaption><h3>Class diagram</h3><p>Eight classes: Administrator, Client, Fridges, Errors, Details, History, ErrorsHistory and TemperatureHistory.</p></figcaption></figure><div class="sl tx"><div><h3>What the app must do</h3><ul><li>Only the administrator can authenticate</li><li>Notify the administrator about errors</li><li>Add, select, modify and delete clients</li><li>Add, select, modify and delete each client’s fridges</li><li>Show real-time temperature, door, battery and power state</li><li>Chart the temperature and keep temperature and error history</li><li>Quality needs: performance, security, UX and UI, clean code</li></ul></div></div><div class="sl tx"><div><h3>Technologies</h3><ul><li><b>Front end:</b> HTML5, CSS3, JavaScript, FeathersJS, Chart.js</li><li><b>Data:</b> Firebase Web SDK and Firebase Realtime Database</li><li><b>Build:</b> Node.js and Webpack</li><li><b>Modelling:</b> UML with Visual Paradigm</li><li><b>Embedded:</b> ESP32 uploading the measurements to the database</li></ul></div></div></div><div class="cc"><button class="pv" aria-label="Previous slide">‹</button><span class="dots"></span><button class="nx" aria-label="Next slide">›</button></div></div></section>
+
+<section>
+<h2>The team</h2>
+<p class="sub">A bachelor project carried out in-plant at ISET Sousse.</p>
+<div class="team"><div><small>Design and development</small><strong>Houssem Khadhraoui</strong></div><div><small>In-plant supervisor</small><strong>Mr. Mokhtar Harabi</strong></div><div><small>Host institute</small><strong>ISET Sousse</strong></div></div>
+</section>
+</div>
+<footer><div class="wrap"><div><b style="font-size:22px">Smart Pharma</b><p>Contact: add your email or LinkedIn here</p></div><p>Information Technology · ISET Sousse</p></div></footer>
+<script>
+var WP="assets/wallpaper.jpg";document.querySelectorAll('img[data-wp]').forEach(function(i){i.src=WP});
+function dots(c,n,f){var d=c.querySelector('.dots');for(var i=0;i<n;i++)d.appendChild(document.createElement('i'));f(0)}
+document.querySelectorAll('.car').forEach(function(c){var t=c.querySelector('.track'),n=t.children.length;
+function mark(i){var d=c.querySelectorAll('.dots i');for(var k=0;k<d.length;k++)d[k].className=k==i?'on':''}
+dots(c,n,mark);function go(d){t.scrollBy({left:d*t.clientWidth,behavior:'smooth'})}
+c.querySelector('.pv').onclick=function(){go(-1)};c.querySelector('.nx').onclick=function(){go(1)};
+t.addEventListener('scroll',function(){mark(Math.round(t.scrollLeft/(t.clientWidth+16)))})});
+(function(){var h=document.getElementById('hs'),s=h.querySelectorAll('.hsl'),i=0,tm,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function show(k){i=(k+s.length)%s.length;for(var j=0;j<s.length;j++)s[j].classList.toggle('on',j==i);var d=h.querySelectorAll('.dots i');for(j=0;j<d.length;j++)d[j].className=j==i?'on':''}
+dots(h,s.length,show);function auto(){if(!rm){clearInterval(tm);tm=setInterval(function(){show(i+1)},5000)}}
+h.querySelector('.pv').onclick=function(){show(i-1);auto()};h.querySelector('.nx').onclick=function(){show(i+1);auto()};
+h.addEventListener('mouseenter',function(){clearInterval(tm)});h.addEventListener('mouseleave',auto);show(0);auto()})();
+/* live monitor */
+var $=function(i){return document.getElementById(i)},S,act,cv=$('cv'),cx=cv.getContext('2d');
+function init(){S={t:-80,door:false,pow:true,bat:100,h:[],al:[],dt:0,warm:0};act={};for(var i=0;i<40;i++)S.h.push(-80);$('bd').setAttribute('aria-pressed',false);$('bp').setAttribute('aria-pressed',false);draw()}
+function flag(k,on){if(on&&!act[k]){act[k]=1;S.al.unshift([k,new Date().toLocaleTimeString()]);S.al=S.al.slice(0,5)}if(!on)act[k]=0}
+function tick(){if(S.door){S.dt++;S.t+=1.1}else{S.dt=0;S.t+=(-80-S.t)*.2+(Math.random()-.5)*.6}
+if(S.warm>0){S.t+=2;S.warm--}if(!S.pow){S.t+=.5;S.bat=Math.max(0,S.bat-2.5)}else S.bat=Math.min(100,S.bat+1.5);
+S.t=Math.min(-40,Math.max(-85,S.t));S.h.push(S.t);S.h.shift();
+flag('err_temperature',S.t>-70);flag('err_door',S.dt>=3);flag('err_battery',S.bat<20);flag('err_power',!S.pow);draw()}
+function draw(){var v=[[Math.round(S.t)+' °C',S.t>-70],[S.door?'open':'closed',S.door],[Math.round(S.bat)+' %',S.bat<20],[S.pow?'on':'off',!S.pow]];
+v.forEach(function(x,i){var e=$('t'+i);e.className='tile'+(x[1]?' bad':'');e.querySelector('b').textContent=x[0]});
+var a='<h3>Top alerts</h3>';a+=S.al.length?S.al.map(function(x){return '<div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>'}).join(''):'<span style="color:#93aebc">No alerts</span>';$('al').innerHTML=a;
+var r=devicePixelRatio||1,w=cv.clientWidth,hh=cv.clientHeight;cv.width=w*r;cv.height=hh*r;cx.setTransform(r,0,0,r,0,0);cx.clearRect(0,0,w,hh);
+function Y(t){return 14+(hh-34)*(-45-t)/45*-1*-1}function Yp(t){return 14+(hh-34)*((-45-t)/-45)}
+cx.font='11px Manrope,sans-serif';cx.fillStyle='#93aebc';cx.strokeStyle='#27506f';cx.lineWidth=1;
+[-85,-75,-65,-55].forEach(function(g){var y=14+(hh-34)*((-50-g)/35);cx.beginPath();cx.moveTo(40,y);cx.lineTo(w-8,y);cx.stroke();cx.fillText(g+'°',6,y+4)});
+var y70=14+(hh-34)*((-50+70)/35);cx.setLineDash([5,5]);cx.strokeStyle='#ff6b6b';cx.beginPath();cx.moveTo(40,y70);cx.lineTo(w-8,y70);cx.stroke();cx.setLineDash([]);
+cx.strokeStyle='#6fe0ff';cx.lineWidth=2.5;cx.beginPath();S.h.forEach(function(t,i){var x=40+(w-48)*i/39,y=14+(hh-34)*((-50-t)/35);i?cx.lineTo(x,y):cx.moveTo(x,y)});cx.stroke()}
+$('bd').onclick=function(){S.door=!S.door;this.setAttribute('aria-pressed',S.door);this.textContent=S.door?'Close door':'Open door';draw()};
+$('bp').onclick=function(){S.pow=!S.pow;this.setAttribute('aria-pressed',!S.pow);this.textContent=S.pow?'Cut power':'Restore power';draw()};
+$('bw').onclick=function(){S.warm=4};$('br').onclick=function(){init();$('bd').textContent='Open door';$('bp').textContent='Cut power'};
+addEventListener('resize',draw);init();setInterval(tick,1000);
+</script>
+</body>
+</html>
